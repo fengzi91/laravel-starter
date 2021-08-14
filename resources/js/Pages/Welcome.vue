@@ -1,8 +1,11 @@
 <template>
-  <div class="welcome">
+  <div class="flex min-h-screen flex-col justify-center items-center">
     <div class="container">
-      <p>{{ content }}</p>
-      <div>counter: {{count}} <button @click="add">add</button></div>
+      <div class="shadow-lg max-w-7xl mx-auto px-4 py-5 rounded-lg text-center">
+        <p class="text-indigo-500">{{ content }}</p>
+        <div class="mt-6">counter: {{count}} <button @click="add" class="text-sm font-semibold bg-indigo-600 rounded-lg text-white py-3 px-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 hover:bg-teal-500">add</button></div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -22,19 +25,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.welcome {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-.welcome .container {
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
-  padding: 4rem;
-  border-radius: 2.08333% / 4.6875%;
-  background-color: rgb(255, 255, 255);
-}
-</style>

@@ -2,19 +2,21 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "development": "TAILWIND_MODE=watch mix",
+        "watch": "TAILWIND_MODE=watch mix watch",
+        "watch-poll": "TAILWIND_MODE=watch mix watch -- --watch-options-poll=1000",
+        "hot": "TAILWIND_MODE=watch mix watch --hot",
+        "prod": "TAILWIND_MODE=watch npm run production",
+        "production": "TAILWIND_MODE=watch mix --production"
     },
     "devDependencies": {
+        "autoprefixer": "^10.3.1",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
+        "postcss": "^8.3.6",
         "prettier": "^2.3.1",
+        "tailwindcss": "^2.2.7",
         "vue-loader": "^15.9.7",
         "vue-template-compiler": "^2.6.14"
     },
