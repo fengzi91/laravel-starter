@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Admin\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -13,7 +13,12 @@ class HandleInertiaRequests extends Middleware
      * @see https://inertiajs.com/server-side-setup#root-template
      * @var string
      */
-    protected $rootView = 'app';
+//    protected $rootView = 'admin/resources/views/admin';
+//
+//    public function rootView(Request $request)
+//    {
+//        return 'admin';
+//    }
 
     /**
      * Determines the current asset version.

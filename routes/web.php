@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -19,3 +20,5 @@ Route::get('/', function () {
         'content' => '欢迎使用 Laravel + Inertia.js',
     ]);
 });
+
+Route::get('/t', [TableController::class, 'index']);

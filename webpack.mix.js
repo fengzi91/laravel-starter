@@ -1,5 +1,5 @@
-const mix = require('laravel-mix');
-
+const mix = require('laravel-mix')
+const path = require('path')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,8 +11,24 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').vue()
-    .postCss('resources/css/app.css', 'public/css', [
-      require("autoprefixer"),
-      require("tailwindcss"),
-    ]);
+mix
+  .js('resources/js/app.js', 'public/js')
+  .vue()
+  .postCss('resources/css/app.css', 'public/css', [
+    require('autoprefixer'),
+    require('tailwindcss'),
+  ])
+
+mix
+  .js('resources/admin/js/app.js', 'public/static/admin/js')
+  .vue({
+    useVueStyleLoader: true,
+  })
+  .alias({
+    '@': path.resolve(__dirname, 'resources/admin/js'),
+  })
+  .postCss('resources/admin/css/app.css', 'public/static/admin/css', [
+    require('autoprefixer'),
+    require('tailwindcss'),
+  ])
+  .version()
